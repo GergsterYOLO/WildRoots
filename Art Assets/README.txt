@@ -1,0 +1,1 @@
+Add all art assets to this folder with appropriate names and let me know when you add them on discord
