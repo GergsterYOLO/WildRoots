@@ -1,6 +1,5 @@
 //for cam
-var cam_speed = 640; //viewport width
-var smooth_factor = 0.1; //0.05-0.2 for different speed
+var cam_speed = 8; // Adjust speed as needed
 var cam = view_camera[0];
 var cam_x = camera_get_view_x(cam);
 var cam_y = 600; //keep same y as viewport
@@ -13,14 +12,16 @@ var view_width = camera_get_view_width(cam);
 var min_x = 0;
 var max_x = bg_width - view_width;
 
-//find target pos
-if (!variable_global_exists("target_x")) {
-    global.target_x = cam_x;
+//update camera position if an arrow button is being held
+if (global.move_left) {
+    cam_x -= cam_speed; // Move left
+}
+if (global.move_right) {
+    cam_x += cam_speed; // Move right
 }
 
-//smooth transition
-global.target_x = clamp(global.target_x, min_x, max_x);
-cam_x = lerp(cam_x, global.target_x, smooth_factor);
+//keep camera within bounds
+cam_x = clamp(cam_x, min_x, max_x);
 
 //update camera pos
 camera_set_view_pos(cam, cam_x, cam_y);
