@@ -5,7 +5,7 @@ if (global.nbvisible) {
 	if (phlox_map[? "aspects_discovered"][0]) { //1
 		visible = true;
     }
-	
+
 } else {
 	visible = false;
 }

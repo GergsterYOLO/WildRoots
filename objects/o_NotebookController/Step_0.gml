@@ -20,6 +20,9 @@ if (global.nbvisible) {
     instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part4) / 2, "Instances", o_plant1_part4);
     instance_create_layer(center_x, center_y - sprite_get_height(s_plant1_part4_entry) / 2, "Instances", o_plant1_part4_entry);
 
+	//Notebook BG
+	instance_create_layer(center_x - 542, center_y - 22 - sprite_get_height(s_NotebookBGPlaceholder) / 2, "Instances", o_NotebookBGPlaceholder);
+
 	//left page colored
 	if (phlox_map[? "aspects_discovered"][0] && phlox_map[? "aspects_discovered"][1] && phlox_map[? "aspects_discovered"][2] && phlox_map[? "aspects_discovered"][3]) {
 		phlox_map[? "fully_explored"] = true;
@@ -27,6 +30,10 @@ if (global.nbvisible) {
 		if (!instance_exists(o_page1_colored)) {
 			instance_create_layer(center_x - 410, center_y - sprite_get_height(s_page1_colored) / 2, "Instances", o_page1_colored);
 		}
+		
+		if (instance_exists(o_page1_sketch)) {
+            instance_destroy(o_page1_sketch);
+        }
 	//left page sketch
 	} else {
 		if (!instance_exists(o_page1_sketch)) {
@@ -46,10 +53,10 @@ if (global.nbvisible) {
     //instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part1_entry) / 2, "Instances", o_plant2_part1_entry);
     //instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part2) / 2, "Instances", o_plant2_part2);
     //instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part2_entry) / 2, "Instances", o_plant2_part2_entry);
-   // instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part3) / 2, "Instances", o_plant2_part3);
+    //instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part3) / 2, "Instances", o_plant2_part3);
     //instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part3_entry) / 2, "Instances", o_plant2_part3_entry);
     //instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part4) / 2, "Instances", o_plant2_part4);
-   // instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part4_entry) / 2, "Instances", o_plant2_part4_entry);
+    //instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part4_entry) / 2, "Instances", o_plant2_part4_entry);
 
 } else { //if not visible, destroy
     if (instance_exists(o_page1_sketch)) {
@@ -61,4 +68,7 @@ if (global.nbvisible) {
     if (instance_exists(o_page1_words)) {
         instance_destroy(o_page1_words);
     }
+	if (instance_exists(o_NotebookBGPlaceholder)) {
+		instance_destroy(o_NotebookBGPlaceholder);
+	}
 }
