@@ -1,5 +1,6 @@
 //vars
 global.nbvisible = false;
+global.pagenum = 1;
 
 //map
 global.notebook = ds_map_create();

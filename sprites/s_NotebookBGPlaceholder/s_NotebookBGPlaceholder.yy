@@ -3,8 +3,8 @@
   "%Name":"s_NotebookBGPlaceholder",
   "bboxMode":0,
   "bbox_bottom":827,
-  "bbox_left":122,
-  "bbox_right":962,
+  "bbox_left":121,
+  "bbox_right":953,
   "bbox_top":170,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1090,
+  "width":1080,
 }
