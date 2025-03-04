@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"o_NotebookIcon",
+  "%Name":"o_page1_words",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_NotebookIcon",
+  "name":"o_page1_words",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"NotebookPages",
+    "path":"folders/Objects/NotebookPages.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_NotebookIconPlaceholder",
-    "path":"sprites/s_NotebookIconPlaceholder/s_NotebookIconPlaceholder.yy",
+    "name":"s_page1_words",
+    "path":"sprites/s_page1_words/s_page1_words.yy",
   },
   "spriteMaskId":null,
   "visible":true,
