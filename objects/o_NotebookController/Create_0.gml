@@ -6,9 +6,9 @@ global.notebook = ds_map_create();
 
 //Alpine Phlox - phlox
 var phlox_map = ds_map_create();
-ds_map_add(phlox_map, "discovered", false);  // Plant discovered or not
-ds_map_add(phlox_map, "fully_explored", false); // Plant fully explored
-ds_map_add(phlox_map, "aspects_discovered", [false, false, false, false]); // Array for parts discovered
+ds_map_add(phlox_map, "discovered", false);
+ds_map_add(phlox_map, "fully_explored", false);
+ds_map_add(phlox_map, "aspects_discovered", [false, false, false, false]);
 
 //Globemallow
 var globemallow_map = ds_map_create();
