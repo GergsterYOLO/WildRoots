@@ -1,6 +1,6 @@
 //vars
 global.nbvisible = false;
-global.pagenum = 1;
+global.pagenum = 0;
 global.tryturnleft = false;
 global.tryturnright = false;
 

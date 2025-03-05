@@ -18,7 +18,11 @@ if (global.nbvisible) {
 	}
 
     //destroy non-relevant pages
-    if (global.pagenum != 1) {
+    if (global.pagenum != 0) {
+		if (instance_exists(o_blankpageleft)) instance_destroy(o_blankpageleft);
+		if (instance_exists(o_blankpageright)) instance_destroy(o_blankpageright);
+	}	
+	if (global.pagenum != 1) {
         if (instance_exists(o_page1_sketch)) instance_destroy(o_page1_sketch);
         if (instance_exists(o_page1_colored)) instance_destroy(o_page1_colored);
         if (instance_exists(o_page1_words)) instance_destroy(o_page1_words);
@@ -48,6 +52,11 @@ if (global.nbvisible) {
     }
 
 	//generate correct notebook page
+	if (global.pagenum == 0) {
+		if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
+		if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
+	}
+	
 	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
 	
 		if (!instance_exists(o_plant1_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part1) / 2, "Instances", o_plant1_part1);
@@ -119,7 +128,7 @@ if (global.nbvisible) {
 	}
 	
 	//turn page
-	if (global.tryturnleft && global.pagenum != 1) {
+	if (global.tryturnleft && global.pagenum != 0) {
 		global.pagenum -= 1;
 		global.tryturnleft = false;
 		
@@ -135,10 +144,24 @@ if (global.nbvisible) {
 		//check if trying to move to undiscovered page
 		if (global.pagenum == 2 && !globemallow_map[? "discovered"]) {
 			global.pagenum -= 1;
+		} else if (global.pagenum == 1 && !phlox_map[? "discovered"]) {
+			global.pagenum -= 1;
+			
+//			if (globemallow_map[? "discovered"]) {
+//				global.pagenum += 1;
+//			} else {
+//				global.pagenum -= 1;
+//			}
 		}
 	}
 
 } else { //if not visible, destroy
+	if (instance_exists(o_blankpageleft)) {
+        instance_destroy(o_blankpageleft);
+    }
+	if (instance_exists(o_blankpageright)) {
+        instance_destroy(o_blankpageright);
+    }
 	if (instance_exists(o_NotebookBGPlaceholder)) {
 		instance_destroy(o_NotebookBGPlaceholder);
 	}

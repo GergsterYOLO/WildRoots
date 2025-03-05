@@ -33,6 +33,8 @@
   },
   "name":"WildRoots",
   "resources":[
+    {"id":{"name":"o_blankpageleft","path":"objects/o_blankpageleft/o_blankpageleft.yy",},},
+    {"id":{"name":"o_blankpageright","path":"objects/o_blankpageright/o_blankpageright.yy",},},
     {"id":{"name":"o_CameraController","path":"objects/o_CameraController/o_CameraController.yy",},},
     {"id":{"name":"o_Cursor","path":"objects/o_Cursor/o_Cursor.yy",},},
     {"id":{"name":"o_LeftArrow","path":"objects/o_LeftArrow/o_LeftArrow.yy",},},
@@ -68,6 +70,7 @@
     {"id":{"name":"o_TurnPageRight","path":"objects/o_TurnPageRight/o_TurnPageRight.yy",},},
     {"id":{"name":"Level1","path":"rooms/Level1/Level1.yy",},},
     {"id":{"name":"s_BackgroundPlaceholder","path":"sprites/s_BackgroundPlaceholder/s_BackgroundPlaceholder.yy",},},
+    {"id":{"name":"s_blankpage","path":"sprites/s_blankpage/s_blankpage.yy",},},
     {"id":{"name":"s_CursorPlaceholder","path":"sprites/s_CursorPlaceholder/s_CursorPlaceholder.yy",},},
     {"id":{"name":"s_LeftArrowPlaceHolder","path":"sprites/s_LeftArrowPlaceHolder/s_LeftArrowPlaceHolder.yy",},},
     {"id":{"name":"s_NotebookBGPlaceholder","path":"sprites/s_NotebookBGPlaceholder/s_NotebookBGPlaceholder.yy",},},
