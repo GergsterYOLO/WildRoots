@@ -4,9 +4,7 @@ if (global.nbvisible) {
 	visible = true;
 	
 	if (mouse_check_button_pressed(mb_left) && position_meeting(mouse_x, mouse_y, id)) {
-		if (global.pagenum != 2) {
-			global.pagenum += 1;
-		}
+		global.tryturnright = true;
 	}
 } else {
 	visible = false;

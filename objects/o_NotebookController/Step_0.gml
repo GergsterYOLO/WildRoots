@@ -1,5 +1,9 @@
 //if visible, display pages
 if (global.nbvisible) {
+	//maps
+	var phlox_map = global.notebook[? "Alpine Phlox"];
+	var globemallow_map = global.notebook[? "Globemallow"];
+	
     //center pos for nb
     var cam_x = camera_get_view_x(view_camera[0]);
     var cam_y = camera_get_view_y(view_camera[0]);
@@ -44,8 +48,7 @@ if (global.nbvisible) {
     }
 
 	//generate correct notebook page
-	if (global.pagenum == 1) { //PAGE 1
-		var phlox_map = global.notebook[? "Alpine Phlox"];
+	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
 	
 		if (!instance_exists(o_plant1_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part1) / 2, "Instances", o_plant1_part1);
 		if (!instance_exists(o_plant1_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant1_part1_entry) / 2, "Instances", o_plant1_part1_entry);
@@ -80,8 +83,7 @@ if (global.nbvisible) {
 		}
 		
 	//PAGE 2
-	} else if (global.pagenum == 2) {
-		var globemallow_map = global.notebook[? "Globemallow"];
+	} else if (global.pagenum == 2  && globemallow_map[? "discovered"]) {
 		
 		if (!instance_exists(o_plant2_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part1) / 2, "Instances", o_plant2_part1);
 		if (!instance_exists(o_plant2_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part1_entry) / 2, "Instances", o_plant2_part1_entry);
@@ -114,6 +116,26 @@ if (global.nbvisible) {
 	  if (!instance_exists(o_page2_words)) {
 	      instance_create_layer(center_x + 0, center_y - sprite_get_height(s_page2_words) / 2, "Instances", o_page2_words);
 	  }
+	}
+	
+	//turn page
+	if (global.tryturnleft && global.pagenum != 1) {
+		global.pagenum -= 1;
+		global.tryturnleft = false;
+		
+		//check if trying to move to undiscovered page
+		if (global.pagenum == 1 && !phlox_map[? "discovered"]) {
+			global.pagenum += 1;
+		}
+	}
+	if (global.tryturnright && global.pagenum != 2) {
+		global.pagenum += 1;
+		global.tryturnright = false;
+		
+		//check if trying to move to undiscovered page
+		if (global.pagenum == 2 && !globemallow_map[? "discovered"]) {
+			global.pagenum -= 1;
+		}
 	}
 
 } else { //if not visible, destroy

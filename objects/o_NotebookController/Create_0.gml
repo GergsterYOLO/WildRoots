@@ -1,18 +1,20 @@
 //vars
 global.nbvisible = false;
 global.pagenum = 1;
+global.tryturnleft = false;
+global.tryturnright = false;
 
 //map
 global.notebook = ds_map_create();
 
 //Alpine Phlox - phlox
-var phlox_map = ds_map_create();
+phlox_map = ds_map_create();
 ds_map_add(phlox_map, "discovered", false);
 ds_map_add(phlox_map, "fully_explored", false);
 ds_map_add(phlox_map, "aspects_discovered", [false, false, false, false]);
 
 //Globemallow
-var globemallow_map = ds_map_create();
+globemallow_map = ds_map_create();
 ds_map_add(globemallow_map, "discovered", false);
 ds_map_add(globemallow_map, "fully_explored", false);
 ds_map_add(globemallow_map, "aspects_discovered", [false, false, false, false]);
