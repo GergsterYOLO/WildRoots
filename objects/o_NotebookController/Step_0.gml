@@ -128,30 +128,20 @@ if (global.nbvisible) {
 	}
 	
 	//turn page
-	if (global.tryturnleft && global.pagenum != 0) {
-		global.pagenum -= 1;
-		global.tryturnleft = false;
-		
-		//check if trying to move to undiscovered page
-		if (global.pagenum == 1 && !phlox_map[? "discovered"]) {
-			global.pagenum += 1;
+	if (global.tryturnleft && global.pagenum != 1 && global.pagenum != 0) {
+		if (global.pagenum == 2 && phlox_map[? "discovered"]) {
+			global.tryturnleft = false;
+			global.pagenum -= 1;
+		} else {
+			global.tryturnleft = false;
 		}
 	}
-	if (global.tryturnright && global.pagenum != 2) {
-		global.pagenum += 1;
-		global.tryturnright = false;
-		
-		//check if trying to move to undiscovered page
-		if (global.pagenum == 2 && !globemallow_map[? "discovered"]) {
-			global.pagenum -= 1;
-		} else if (global.pagenum == 1 && !phlox_map[? "discovered"]) {
-			global.pagenum -= 1;
-			
-//			if (globemallow_map[? "discovered"]) {
-//				global.pagenum += 1;
-//			} else {
-//				global.pagenum -= 1;
-//			}
+	if (global.tryturnright && global.pagenum != 2 && global.pagenum != 0) {
+		if (global.pagenum == 1 && globemallow_map[? "discovered"]) {
+			global.tryturnright = false;
+			global.pagenum += 1;
+		} else {
+			global.tryturnright = false;
 		}
 	}
 
