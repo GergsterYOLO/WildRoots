@@ -12,7 +12,7 @@ if (global.nbvisible) {
 
 //alpha
 if (position_meeting(mouse_x, mouse_y, id)) {
-    image_alpha = 1;
+    image_alpha = 0.8;
 } else {
-    image_alpha = 0.80;
+    image_alpha = 1;
 }
