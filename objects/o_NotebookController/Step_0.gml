@@ -18,11 +18,29 @@ if (global.nbvisible) {
         if (instance_exists(o_page1_sketch)) instance_destroy(o_page1_sketch);
         if (instance_exists(o_page1_colored)) instance_destroy(o_page1_colored);
         if (instance_exists(o_page1_words)) instance_destroy(o_page1_words);
+		
+		if (instance_exists(o_plant1_part1)) instance_destroy(o_plant1_part1);
+        if (instance_exists(o_plant1_part1_entry)) instance_destroy(o_plant1_part1_entry);
+        if (instance_exists(o_plant1_part2)) instance_destroy(o_plant1_part2);
+        if (instance_exists(o_plant1_part2_entry)) instance_destroy(o_plant1_part2_entry);
+        if (instance_exists(o_plant1_part3)) instance_destroy(o_plant1_part3);
+        if (instance_exists(o_plant1_part3_entry)) instance_destroy(o_plant1_part3_entry);
+        if (instance_exists(o_plant1_part4)) instance_destroy(o_plant1_part4);
+        if (instance_exists(o_plant1_part4_entry)) instance_destroy(o_plant1_part4_entry);
     }
     if (global.pagenum != 2) {
         if (instance_exists(o_page2_sketch)) instance_destroy(o_page2_sketch);
         if (instance_exists(o_page2_colored)) instance_destroy(o_page2_colored);
         if (instance_exists(o_page2_words)) instance_destroy(o_page2_words);
+		
+		if (instance_exists(o_plant2_part1)) instance_destroy(o_plant2_part1);
+        if (instance_exists(o_plant2_part1_entry)) instance_destroy(o_plant2_part1_entry);
+        if (instance_exists(o_plant2_part2)) instance_destroy(o_plant2_part2);
+        if (instance_exists(o_plant2_part2_entry)) instance_destroy(o_plant2_part2_entry);
+        if (instance_exists(o_plant2_part3)) instance_destroy(o_plant2_part3);
+        if (instance_exists(o_plant2_part3_entry)) instance_destroy(o_plant2_part3_entry);
+        if (instance_exists(o_plant2_part4)) instance_destroy(o_plant2_part4);
+        if (instance_exists(o_plant2_part4_entry)) instance_destroy(o_plant2_part4_entry);
     }
 
 	//generate correct notebook page
