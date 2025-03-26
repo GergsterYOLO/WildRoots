@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_RightArrowPlaceholder",
-    "path":"sprites/s_RightArrowPlaceholder/s_RightArrowPlaceholder.yy",
+    "name":"s_rightarrow",
+    "path":"sprites/s_rightarrow/s_rightarrow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

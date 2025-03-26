@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_LeftArrowPlaceHolder",
-    "path":"sprites/s_LeftArrowPlaceHolder/s_LeftArrowPlaceHolder.yy",
+    "name":"s_leftarrow",
+    "path":"sprites/s_leftarrow/s_leftarrow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

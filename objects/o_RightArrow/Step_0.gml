@@ -6,9 +6,12 @@ if (global.nbvisible) {
 	visible = true;
 }
 
-//alpha
+//hover
 if (position_meeting(mouse_x, mouse_y, id)) {
-    image_alpha = 0.85;
+    sprite_index = s_rightarrowhover;
+    image_speed = 1;
 } else {
-    image_alpha = 1;
+    sprite_index = s_rightarrow;
+    image_speed = 0;
+    image_index = 0;
 }
