@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_NotebookIconPlaceholder",
-    "path":"sprites/s_NotebookIconPlaceholder/s_NotebookIconPlaceholder.yy",
+    "name":"s_notebookicon",
+    "path":"sprites/s_notebookicon/s_notebookicon.yy",
   },
   "spriteMaskId":null,
   "visible":true,

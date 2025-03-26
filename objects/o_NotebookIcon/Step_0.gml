@@ -4,9 +4,18 @@ if (mouse_check_button_pressed(mb_left) && position_meeting(mouse_x, mouse_y, id
     global.nbvisible = !global.nbvisible; // Toggle visibility
 }
 
-//alpha
-if (position_meeting(mouse_x, mouse_y, id)) {
-    image_alpha = 0.85;
+//hover
+if (global.nbvisible) {
+	sprite_index = s_notebookcloseicon;
+	
+//	if (position_meeting(mouse_x, mouse_y, id)) {
+//		sprite_index = s_notebookcloseiconhover;
+//		image_speed = 1;
+//	} else {
+//		sprite_index = s_notebookcloseicon;
+//		image_speed = 0;
+//		image_index = 0;
+//	}
 } else {
-    image_alpha = 1;
+	sprite_index = s_notebookicon;
 }
