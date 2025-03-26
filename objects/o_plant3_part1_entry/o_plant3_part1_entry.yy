@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_plant3_part1_words",
-    "path":"sprites/s_plant3_part1_words/s_plant3_part1_words.yy",
+    "name":"s_plant3_part1_entry",
+    "path":"sprites/s_plant3_part1_entry/s_plant3_part1_entry.yy",
   },
   "spriteMaskId":null,
   "visible":true,
