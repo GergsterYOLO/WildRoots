@@ -25,7 +25,7 @@ if (global.nbvisible) {
         
         //update map
         if (object_index == o_plant4_part3) {
-			palmers_map[? "aspects_discovered"][2] = true;
+			fremont_map[? "aspects_discovered"][2] = true;
         }
         //update plant entry visibility
         var entry_instance = instance_find(o_plant4_part3_entry, 2);
