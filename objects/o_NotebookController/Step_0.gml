@@ -1,6 +1,6 @@
 //if visible, display pages
 if (global.nbvisible) {
-	//maps
+	//map-ception
 	var phlox_map = global.notebook[? "Alpine Phlox"];
 	var globemallow_map = global.notebook[? "Globemallow"];
 	
@@ -59,6 +59,7 @@ if (global.nbvisible) {
 	
 	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
 	
+		//generate parts
 		if (!instance_exists(o_plant1_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part1) / 2, "Instances", o_plant1_part1);
 		if (!instance_exists(o_plant1_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant1_part1_entry) / 2, "Instances", o_plant1_part1_entry);
 		if (!instance_exists(o_plant1_part2)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part2) / 2, "Instances", o_plant1_part2);
@@ -94,6 +95,7 @@ if (global.nbvisible) {
 	//PAGE 2
 	} else if (global.pagenum == 2  && globemallow_map[? "discovered"]) {
 		
+		//generate parts
 		if (!instance_exists(o_plant2_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part1) / 2, "Instances", o_plant2_part1);
 		if (!instance_exists(o_plant2_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part1_entry) / 2, "Instances", o_plant2_part1_entry);
 		if (!instance_exists(o_plant2_part2)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part2) / 2, "Instances", o_plant2_part2);
@@ -128,21 +130,29 @@ if (global.nbvisible) {
 	}
 	
 	//turn page
-	if (global.tryturnleft && global.pagenum != 1 && global.pagenum != 0) {
-		if (global.pagenum == 2 && phlox_map[? "discovered"]) {
-			global.tryturnleft = false;
-			global.pagenum -= 1;
-		} else {
-			global.tryturnleft = false;
+	if (global.tryturnleft) {
+		if (global.pagenum != 0 && global.pagenum != 1) {
+			global.pagenum--;
 		}
+		
+		//check if trying to navigate to undiscovered page
+		if ( (global.pagenum == 1 && !phlox_map[? "discovered"]) ) {
+			global.pagenum++;
+		}
+		
+		global.tryturnleft = false;
 	}
-	if (global.tryturnright && global.pagenum != 2 && global.pagenum != 0) {
-		if (global.pagenum == 1 && globemallow_map[? "discovered"]) {
-			global.tryturnright = false;
-			global.pagenum += 1;
-		} else {
-			global.tryturnright = false;
+	if (global.tryturnright) {
+		if (global.pagenum != 2) {
+			global.pagenum++;
 		}
+		
+		//check if trying to navigate to undiscovered page
+		if ( (global.pagenum == 2 && !globemallow_map[? "discovered"]) ) {
+			global.pagenum--;
+		}
+		
+		global.tryturnright = false;
 	}
 
 } else { //if not visible, destroy
