@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"o_Cursor",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"o_page3_words",
+  "eventList":[],
   "managed":true,
-  "name":"o_Cursor",
+  "name":"o_page3_words",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"NotebookPages",
+    "path":"folders/Objects/NotebookPages.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_CursorPlaceholder",
-    "path":"sprites/s_CursorPlaceholder/s_CursorPlaceholder.yy",
+    "name":"s_page3_words",
+    "path":"sprites/s_page3_words/s_page3_words.yy",
   },
   "spriteMaskId":null,
   "visible":true,

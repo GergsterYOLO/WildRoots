@@ -56,9 +56,7 @@ if (global.nbvisible) {
 		if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
 		if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
 	}
-	
 	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
-	
 		//generate parts
 		if (!instance_exists(o_plant1_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part1) / 2, "Instances", o_plant1_part1);
 		if (!instance_exists(o_plant1_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant1_part1_entry) / 2, "Instances", o_plant1_part1_entry);
@@ -90,11 +88,9 @@ if (global.nbvisible) {
 		//right page (words page)
 		if (!instance_exists(o_page1_words)) {
 			instance_create_layer(center_x + 0, center_y - sprite_get_height(s_page1_words) / 2, "Instances", o_page1_words);
-		}
-		
+		}	
 	//PAGE 2
 	} else if (global.pagenum == 2  && globemallow_map[? "discovered"]) {
-		
 		//generate parts
 		if (!instance_exists(o_plant2_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part1) / 2, "Instances", o_plant2_part1);
 		if (!instance_exists(o_plant2_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part1_entry) / 2, "Instances", o_plant2_part1_entry);
