@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"s_NotebookIconPlaceholder",
   "bboxMode":0,
-  "bbox_bottom":693,
+  "bbox_bottom":832,
   "bbox_left":0,
-  "bbox_right":749,
+  "bbox_right":899,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":694,
+  "height":833,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"89f1b758-df10-4cd8-95d8-9f58c293e278","blendMode":0,"displayName":"default","isLocked":false,"name":"89f1b758-df10-4cd8-95d8-9f58c293e278","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":750,
+  "width":900,
 }

@@ -1,1 +1,4 @@
-global.move_right = true;
+if (global.nbvisible) {
+} else {
+	global.move_right = true;
+}
