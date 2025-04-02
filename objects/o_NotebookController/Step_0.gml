@@ -80,6 +80,20 @@ if (global.nbvisible) {
         if (instance_exists(o_plant4_part4)) instance_destroy(o_plant4_part4);
         if (instance_exists(o_plant4_part4_entry)) instance_destroy(o_plant4_part4_entry);
 	}
+		if (global.pagenum != 5) {
+		if (instance_exists(o_page5_sketch)) instance_destroy(o_page5_sketch);
+        if (instance_exists(o_page5_colored)) instance_destroy(o_page5_colored);
+        if (instance_exists(o_page5_words)) instance_destroy(o_page5_words);
+		
+		if (instance_exists(o_plant5_part1)) instance_destroy(o_plant5_part1);
+        if (instance_exists(o_plant5_part1_entry)) instance_destroy(o_plant5_part1_entry);
+        if (instance_exists(o_plant5_part2)) instance_destroy(o_plant5_part2);
+        if (instance_exists(o_plant5_part2_entry)) instance_destroy(o_plant5_part2_entry);
+        if (instance_exists(o_plant5_part3)) instance_destroy(o_plant5_part3);
+        if (instance_exists(o_plant5_part3_entry)) instance_destroy(o_plant5_part3_entry);
+        if (instance_exists(o_plant5_part4)) instance_destroy(o_plant5_part4);
+        if (instance_exists(o_plant5_part4_entry)) instance_destroy(o_plant5_part4_entry);
+	}
 
 	//generate correct notebook page
 	if (global.pagenum == 0) {
@@ -221,6 +235,39 @@ if (global.nbvisible) {
 		if (!instance_exists(o_page4_words)) {
 			instance_create_layer(center_x + 0, center_y - sprite_get_height(s_page4_words) / 2, "Instances", o_page4_words);
 		}
+	} else if (global.pagenum == 5 && mountain_map[? "discovered"]) {
+		//generate parts
+		if (!instance_exists(o_plant5_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part1) / 2, "Instances", o_plant5_part1);
+		if (!instance_exists(o_plant5_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part1_entry) / 2, "Instances", o_plant5_part1_entry);
+		if (!instance_exists(o_plant5_part2)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part2) / 2, "Instances", o_plant5_part2);
+		if (!instance_exists(o_plant5_part2_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part2_entry) / 2, "Instances", o_plant5_part2_entry);
+		if (!instance_exists(o_plant5_part3)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part3) / 2, "Instances", o_plant5_part3);
+		if (!instance_exists(o_plant5_part3_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part3_entry) / 2, "Instances", o_plant5_part3_entry);
+		if (!instance_exists(o_plant5_part4)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part4) / 2, "Instances", o_plant5_part4);
+		if (!instance_exists(o_plant5_part4_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part4_entry) / 2, "Instances", o_plant5_part4_entry);
+
+		//left page colored
+		if (mountain_map[? "aspects_discovered"][0] && mountain_map[? "aspects_discovered"][1] && mountain_map[? "aspects_discovered"][2] && mountain_map[? "aspects_discovered"][3]) {
+			mountain_map[? "fully_explored"] = true;
+			
+			if (!instance_exists(o_page5_colored)) {
+				instance_create_layer(center_x - 410, center_y - sprite_get_height(s_page5_colored) / 2, "Instances", o_page5_colored);
+			}
+		
+			if (instance_exists(o_page5_sketch)) {
+				instance_destroy(o_page5_sketch);
+			}
+		//left page sketch
+		} else {
+			if (!instance_exists(o_page5_sketch)) {
+				instance_create_layer(center_x - 410, center_y - sprite_get_height(s_page5_sketch) / 2, "Instances", o_page5_sketch);
+			}
+		}
+
+		//right page (words page)
+		if (!instance_exists(o_page5_words)) {
+			instance_create_layer(center_x + 0, center_y - sprite_get_height(s_page5_words) / 2, "Instances", o_page5_words);
+		}
 	}
 	
 	//turn page
@@ -237,12 +284,12 @@ if (global.nbvisible) {
 		global.tryturnleft = false;
 	}
 	if (global.tryturnright) {
-		if (global.pagenum != 4) {
+		if (global.pagenum != 5) {
 			global.pagenum++;
 		}
 		
 		//check if trying to navigate to undiscovered page
-		if ( (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) ) {
+		if ( (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) || (global.pagenum == 5 && !mountain_map[? "discovered"]) ) {
 			global.pagenum--;
 		}
 		
@@ -294,5 +341,14 @@ if (global.nbvisible) {
 	}
     if (instance_exists(o_page4_words)) {
         instance_destroy(o_page4_words);
+    }
+	    if (instance_exists(o_page5_sketch)) {
+        instance_destroy(o_page5_sketch);
+    }
+	if (instance_exists(o_page5_colored)) {
+		instance_destroy(o_page5_colored);
+	}
+    if (instance_exists(o_page5_words)) {
+        instance_destroy(o_page5_words);
     }
 }
