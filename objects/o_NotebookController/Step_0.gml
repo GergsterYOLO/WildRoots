@@ -244,7 +244,7 @@ if (global.nbvisible) {
 		if (!instance_exists(o_plant5_part3)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part3) / 2, "Instances", o_plant5_part3);
 		if (!instance_exists(o_plant5_part3_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part3_entry) / 2, "Instances", o_plant5_part3_entry);
 		if (!instance_exists(o_plant5_part4)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part4) / 2, "Instances", o_plant5_part4);
-		if (!instance_exists(o_plant5_part4_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part4_entry) / 2, "Instances", o_plant5_part4_entry);
+		if (!instance_exists(o_plant5_part4_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part4_words) / 2, "Instances", o_plant5_part4_entry);
 
 		//left page colored
 		if (mountain_map[? "aspects_discovered"][0] && mountain_map[? "aspects_discovered"][1] && mountain_map[? "aspects_discovered"][2] && mountain_map[? "aspects_discovered"][3]) {
