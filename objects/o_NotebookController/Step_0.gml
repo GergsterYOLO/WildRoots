@@ -22,11 +22,8 @@ if (global.nbvisible) {
 
     //destroy non-relevant pages
     if (global.pagenum != 0) {
-		//check if page is discovered and if so destroy the blank pages
-		if ( (global.pagenum == 1 && phlox_map[? "discovered"]) || (global.pagenum == 2 && globemallow_map[? "discovered"]) || (global.pagenum == 3 && palmers_map[? "discovered"]) || (global.pagenum == 4 && fremont_map[? "discovered"]) || (global.pagenum == 5 && mountain_map[? "discovered"]) ) {
-			if (instance_exists(o_blankpageleft)) instance_destroy(o_blankpageleft);
-			if (instance_exists(o_blankpageright)) instance_destroy(o_blankpageright);
-		}
+		if (instance_exists(o_menupage)) instance_destroy(o_menupage);
+		if (instance_exists(o_blankpagecolored)) instance_destroy(o_blankpagecolored);
 	}	
 	if (global.pagenum != 1) {
         if (instance_exists(o_page1_sketch)) instance_destroy(o_page1_sketch);
@@ -98,13 +95,28 @@ if (global.nbvisible) {
         if (instance_exists(o_plant5_part4)) instance_destroy(o_plant5_part4);
         if (instance_exists(o_plant5_part4_entry)) instance_destroy(o_plant5_part4_entry);
 	}
+	    if (global.pagenum != 6) {
+			if (instance_exists(o_blankpagecolored)) instance_destroy(o_blankpagecolored);
+			if (instance_exists(o_credits)) instance_destroy(o_credits);
+	}	
 
 	//generate correct notebook page
 	if (global.pagenum == 0) {
-		if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
-		if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
+		if (!instance_exists(o_blankpagecolored)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpagecolored) / 2, "Instances", o_blankpagecolored);
+		if (!instance_exists(o_menupage)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_menupage) / 2, "Instances", o_menupage);
+		
+		//TODO generate buttons
+		
 	}
 	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
 		//generate parts
 		if (!instance_exists(o_plant1_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant1_part1) / 2, "Instances", o_plant1_part1);
 		if (!instance_exists(o_plant1_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant1_part1_entry) / 2, "Instances", o_plant1_part1_entry);
@@ -139,6 +151,10 @@ if (global.nbvisible) {
 		}	
 	//PAGE 2
 	} else if (global.pagenum == 2  && globemallow_map[? "discovered"]) {
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
 		//generate parts
 		if (!instance_exists(o_plant2_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant2_part1) / 2, "Instances", o_plant2_part1);
 		if (!instance_exists(o_plant2_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant2_part1_entry) / 2, "Instances", o_plant2_part1_entry);
@@ -173,6 +189,10 @@ if (global.nbvisible) {
 	  }
 	  //PAGE 3
 	} else if (global.pagenum == 3 && palmers_map[? "discovered"]) {
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
 		//generate parts
 		if (!instance_exists(o_plant3_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant3_part1) / 2, "Instances", o_plant3_part1);
 		if (!instance_exists(o_plant3_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant3_part1_entry) / 2, "Instances", o_plant3_part1_entry);
@@ -207,6 +227,10 @@ if (global.nbvisible) {
 		}	  
 		//PAGE 4
 	} else if (global.pagenum == 4 && fremont_map[? "discovered"]) {
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
 		//generate parts
 		if (!instance_exists(o_plant4_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant4_part1) / 2, "Instances", o_plant4_part1);
 		if (!instance_exists(o_plant4_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant4_part1_entry) / 2, "Instances", o_plant4_part1_entry);
@@ -240,6 +264,10 @@ if (global.nbvisible) {
 			instance_create_layer(center_x + 0, center_y - sprite_get_height(s_page4_words) / 2, "Instances", o_page4_words);
 		}
 	} else if (global.pagenum == 5 && mountain_map[? "discovered"]) {
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
 		//generate parts
 		if (!instance_exists(o_plant5_part1)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_plant5_part1) / 2, "Instances", o_plant5_part1);
 		if (!instance_exists(o_plant5_part1_entry)) instance_create_layer(center_x, center_y - sprite_get_height(s_plant5_part1_entry) / 2, "Instances", o_plant5_part1_entry);
@@ -272,6 +300,13 @@ if (global.nbvisible) {
 		if (!instance_exists(o_page5_words)) {
 			instance_create_layer(center_x + 0, center_y - sprite_get_height(s_page5_words) / 2, "Instances", o_page5_words);
 		}
+	} else if (global.pagenum == 6) {
+		//check for blank pages
+		if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+		if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+		
+		if (!instance_exists(o_blankpagecolored)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpagecolored) / 2, "Instances", o_blankpagecolored);
+		if (!instance_exists(o_credits)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_credits) / 2, "Instances", o_credits);
 	}
 	
 	//turn page
@@ -281,7 +316,7 @@ if (global.nbvisible) {
 		}
 		
 		//check if trying to navigate to undiscovered page and print blank instead
-		if ( (global.pagenum == 1 && !phlox_map[? "discovered"]) || (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) ) {
+		if ( (global.pagenum == 1 && !phlox_map[? "discovered"]) || (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) || (global.pagenum == 5 && !mountain_map[? "discovered"]) ) {
 			if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
 			if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
 		}
@@ -289,12 +324,12 @@ if (global.nbvisible) {
 		global.tryturnleft = false;
 	}
 	if (global.tryturnright) {
-		if (global.pagenum != 5) {
+		if (global.pagenum != 6) {
 			global.pagenum++;
 		}
 		
 		//check if trying to navigate to undiscovered page and print blank instead
-		if ( (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) || (global.pagenum == 5 && !mountain_map[? "discovered"]) ) {
+		if ( (global.pagenum == 1 && !phlox_map[? "discovered"]) || (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) || (global.pagenum == 5 && !mountain_map[? "discovered"]) ) {
 			if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
 			if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
 		}
@@ -303,58 +338,25 @@ if (global.nbvisible) {
 	}
 
 } else { //if not visible, destroy
-	if (instance_exists(o_blankpageleft)) {
-        instance_destroy(o_blankpageleft);
-    }
-	if (instance_exists(o_blankpageright)) {
-        instance_destroy(o_blankpageright);
-    }
-	if (instance_exists(o_NotebookBGPlaceholder)) {
-		instance_destroy(o_NotebookBGPlaceholder);
-	}
-    if (instance_exists(o_page1_sketch)) {
-        instance_destroy(o_page1_sketch);
-    }
-	if (instance_exists(o_page1_colored)) {
-		instance_destroy(o_page1_colored);
-	}
-    if (instance_exists(o_page1_words)) {
-        instance_destroy(o_page1_words);
-    }
-    if (instance_exists(o_page2_sketch)) {
-        instance_destroy(o_page2_sketch);
-    }
-	if (instance_exists(o_page2_colored)) {
-		instance_destroy(o_page2_colored);
-	}
-    if (instance_exists(o_page2_words)) {
-        instance_destroy(o_page2_words);
-    }
-	if (instance_exists(o_page3_sketch)) {
-        instance_destroy(o_page3_sketch);
-    }
-	if (instance_exists(o_page3_colored)) {
-		instance_destroy(o_page3_colored);
-	}
-    if (instance_exists(o_page3_words)) {
-        instance_destroy(o_page3_words);
-    }
-    if (instance_exists(o_page4_sketch)) {
-        instance_destroy(o_page4_sketch);
-    }
-	if (instance_exists(o_page4_colored)) {
-		instance_destroy(o_page4_colored);
-	}
-    if (instance_exists(o_page4_words)) {
-        instance_destroy(o_page4_words);
-    }
-	    if (instance_exists(o_page5_sketch)) {
-        instance_destroy(o_page5_sketch);
-    }
-	if (instance_exists(o_page5_colored)) {
-		instance_destroy(o_page5_colored);
-	}
-    if (instance_exists(o_page5_words)) {
-        instance_destroy(o_page5_words);
-    }
+	if (instance_exists(o_blankpageleft)) { instance_destroy(o_blankpageleft); }
+	if (instance_exists(o_blankpageright)) { instance_destroy(o_blankpageright); }
+	if (instance_exists(o_NotebookBGPlaceholder)) { instance_destroy(o_NotebookBGPlaceholder); }
+    if (instance_exists(o_page1_sketch)) { instance_destroy(o_page1_sketch); }
+	if (instance_exists(o_page1_colored)) { instance_destroy(o_page1_colored); }
+    if (instance_exists(o_page1_words)) { instance_destroy(o_page1_words); }
+    if (instance_exists(o_page2_sketch)) { instance_destroy(o_page2_sketch); }
+	if (instance_exists(o_page2_colored)) { instance_destroy(o_page2_colored); }
+    if (instance_exists(o_page2_words)) { instance_destroy(o_page2_words); }
+	if (instance_exists(o_page3_sketch)) { instance_destroy(o_page3_sketch); }
+	if (instance_exists(o_page3_colored)) { instance_destroy(o_page3_colored); }
+    if (instance_exists(o_page3_words)) { instance_destroy(o_page3_words); }
+    if (instance_exists(o_page4_sketch)) { instance_destroy(o_page4_sketch); }
+	if (instance_exists(o_page4_colored)) { instance_destroy(o_page4_colored); }
+    if (instance_exists(o_page4_words)) { instance_destroy(o_page4_words); }
+	if (instance_exists(o_page5_sketch)) { instance_destroy(o_page5_sketch);}
+	if (instance_exists(o_page5_colored)) { instance_destroy(o_page5_colored); }
+    if (instance_exists(o_page5_words)) { instance_destroy(o_page5_words); }
+	if (instance_exists(o_menupage)) { instance_destroy(o_menupage); }
+	if (instance_exists(o_credits)) { instance_destroy(o_credits); }
+	if (instance_exists(o_blankpagecolored)) { instance_destroy(o_blankpagecolored); }
 }
