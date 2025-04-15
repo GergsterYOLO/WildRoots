@@ -16,7 +16,7 @@ if (global.nbvisible) {
 	
 	//notebook BG
 	if (!instance_exists(o_NotebookBGPlaceholder)) {
-		instance_create_layer(center_x - 537, center_y - 22 - sprite_get_height(s_NotebookBGPlaceholder) / 2, "Instances", o_NotebookBGPlaceholder);
+		instance_create_layer(center_x - 510, center_y - sprite_get_height(s_NotebookBGPlaceholder) / 2, "Instances", o_NotebookBGPlaceholder);
 	}
 
     //destroy non-relevant pages
