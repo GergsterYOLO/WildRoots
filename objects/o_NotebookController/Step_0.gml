@@ -24,6 +24,9 @@ if (global.nbvisible) {
     if (global.pagenum != 0) {
 		if (instance_exists(o_menupage)) instance_destroy(o_menupage);
 		if (instance_exists(o_blankpagecolored)) instance_destroy(o_blankpagecolored);
+		
+		if (instance_exists(o_menubutton)) instance_destroy(o_menubutton);
+		if (instance_exists(o_exitbutton)) instance_destroy(o_exitbutton);
 	}	
 	if (global.pagenum != 1) {
         if (instance_exists(o_page1_sketch)) instance_destroy(o_page1_sketch);
@@ -109,8 +112,9 @@ if (global.nbvisible) {
 		if (!instance_exists(o_blankpagecolored)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpagecolored) / 2, "Instances", o_blankpagecolored);
 		if (!instance_exists(o_menupage)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_menupage) / 2, "Instances", o_menupage);
 		
-		//TODO generate buttons
-		
+		//generate buttons
+		if (!instance_exists(o_menubutton)) instance_create_layer(center_x, center_y - sprite_get_height(s_menubutton) / 2, "Instances", o_menubutton);
+		if (!instance_exists(o_exitbutton)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_exitbutton) / 2, "Instances", o_exitbutton);
 	}
 	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
 		//check for blank pages
