@@ -5,6 +5,7 @@ if (global.nbvisible) {
 	var globemallow_map = global.notebook[? "Globemallow"];
 	var palmers_map = global.notebook[? "Palmers"];
 	var fremont_map = global.notebook[? "Fremont"];
+	var mountain_map = global.notebook[? "Mountain"];
 	
     //center pos for nb
     var cam_x = camera_get_view_x(view_camera[0]);
@@ -21,8 +22,11 @@ if (global.nbvisible) {
 
     //destroy non-relevant pages
     if (global.pagenum != 0) {
-		if (instance_exists(o_blankpageleft)) instance_destroy(o_blankpageleft);
-		if (instance_exists(o_blankpageright)) instance_destroy(o_blankpageright);
+		//check if page is discovered and if so destroy the blank pages
+		if ( (global.pagenum == 1 && phlox_map[? "discovered"]) || (global.pagenum == 2 && globemallow_map[? "discovered"]) || (global.pagenum == 3 && palmers_map[? "discovered"]) || (global.pagenum == 4 && fremont_map[? "discovered"]) || (global.pagenum == 5 && mountain_map[? "discovered"]) ) {
+			if (instance_exists(o_blankpageleft)) instance_destroy(o_blankpageleft);
+			if (instance_exists(o_blankpageright)) instance_destroy(o_blankpageright);
+		}
 	}	
 	if (global.pagenum != 1) {
         if (instance_exists(o_page1_sketch)) instance_destroy(o_page1_sketch);
@@ -272,13 +276,14 @@ if (global.nbvisible) {
 	
 	//turn page
 	if (global.tryturnleft) {
-		if (global.pagenum != 0 && global.pagenum != 1) {
+		if (global.pagenum != 0) {
 			global.pagenum--;
 		}
 		
-		//check if trying to navigate to undiscovered page
+		//check if trying to navigate to undiscovered page and print blank instead
 		if ( (global.pagenum == 1 && !phlox_map[? "discovered"]) || (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) ) {
-			global.pagenum++;
+			if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
+			if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
 		}
 		
 		global.tryturnleft = false;
@@ -288,9 +293,10 @@ if (global.nbvisible) {
 			global.pagenum++;
 		}
 		
-		//check if trying to navigate to undiscovered page
+		//check if trying to navigate to undiscovered page and print blank instead
 		if ( (global.pagenum == 2 && !globemallow_map[? "discovered"]) || (global.pagenum == 3 && !palmers_map[? "discovered"]) || (global.pagenum == 4 && !fremont_map[? "discovered"]) || (global.pagenum == 5 && !mountain_map[? "discovered"]) ) {
-			global.pagenum--;
+			if (!instance_exists(o_blankpageleft)) instance_create_layer(center_x, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageleft);
+			if (!instance_exists(o_blankpageright)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_blankpage) / 2, "Instances", o_blankpageright);
 		}
 		
 		global.tryturnright = false;
