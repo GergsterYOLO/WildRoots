@@ -113,7 +113,7 @@ if (global.nbvisible) {
 		if (!instance_exists(o_menupage)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_menupage) / 2, "Instances", o_menupage);
 		
 		//generate buttons
-		if (!instance_exists(o_menubutton)) instance_create_layer(center_x, center_y - sprite_get_height(s_menubutton) / 2, "Instances", o_menubutton);
+		if (!instance_exists(o_menubutton)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_menubutton) / 2, "Instances", o_menubutton);
 		if (!instance_exists(o_exitbutton)) instance_create_layer(center_x - 410, center_y - sprite_get_height(s_exitbutton) / 2, "Instances", o_exitbutton);
 	}
 	if (global.pagenum == 1 && phlox_map[? "discovered"]) { //PAGE 1
